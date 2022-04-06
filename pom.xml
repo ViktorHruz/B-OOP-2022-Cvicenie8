@@ -7,6 +7,14 @@
     <groupId>sk.stuba.fei.uim.oop</groupId>
     <artifactId>B-OOP-2022-CvicenieTemplate</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
