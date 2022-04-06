@@ -11,8 +11,6 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setBackground(Color.CYAN);
         frame.setLayout(new BorderLayout());
-        frame.setFocusable(true);
-        frame.requestFocus();
 
         Logic logic = new Logic(frame);
         frame.addKeyListener(logic);
@@ -29,6 +27,7 @@ public class Main {
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
         slider.addChangeListener(logic);
+        slider.setFocusable(false);
 
         menu.add(slider);
         menu.add(logic.getLabel());
