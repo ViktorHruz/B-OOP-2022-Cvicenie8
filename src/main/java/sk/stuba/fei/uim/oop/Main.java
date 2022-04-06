@@ -12,8 +12,9 @@ public class Main {
         frame.getContentPane().setBackground(Color.CYAN);
         frame.setLayout(new BorderLayout());
         frame.setFocusable(true);
+        frame.requestFocus();
 
-        Logic logic = new Logic();
+        Logic logic = new Logic(frame);
         frame.addKeyListener(logic);
 
         JPanel menu = new JPanel();

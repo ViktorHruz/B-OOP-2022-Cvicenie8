@@ -12,9 +12,11 @@ public class Logic implements KeyListener, ChangeListener {
 
     @Getter
     private JLabel label;
+    private JFrame frame;
 
-    public Logic() {
+    public Logic(JFrame frame) {
         this.label = new JLabel("Zaciatocny text");
+        this.frame = frame;
     }
 
     @Override
@@ -35,5 +37,7 @@ public class Logic implements KeyListener, ChangeListener {
     @Override
     public void stateChanged(ChangeEvent e) {
         this.label.setText("Cislo: " + ((JSlider) e.getSource()).getValue());
+        this.frame.setFocusable(true);
+        frame.requestFocus();
     }
 }
