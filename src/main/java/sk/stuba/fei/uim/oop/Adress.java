@@ -4,11 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data @AllArgsConstructor
-public class Message implements CharacterKey{
-    private String content;
+public class Adress implements  CharacterKey{
+
+    private String adress;
+    private String psc;
 
     @Override
     public Character getke() {
-        return this.getContent().charAt(0);
+        return adress.charAt(0);
     }
 }
