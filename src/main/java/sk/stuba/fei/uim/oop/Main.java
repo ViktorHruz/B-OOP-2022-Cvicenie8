@@ -10,11 +10,13 @@ public class Main {
     public static void main(String[] args) {
 
 
-        ConcreteIndex concreteIndex = new ConcreteIndex();
-        concreteIndex.add(new Message("hello"));
-        concreteIndex.add(new Message("world"));
-        concreteIndex.add(new Message("hello world"));
-        System.out.println(concreteIndex.toString());
+        GenericIndex<Character, Message> concreteIndex = new GenericIndex<>();
+        var old = concreteIndex.put('w', new Message("world"));
+        System.out.println(old);
+        old = concreteIndex.put('h', new Message("Hello world"));
+        System.out.println(old);
+        old = concreteIndex.put('h', new Message("hello"));
+        System.out.println(old);
     }
 
 
