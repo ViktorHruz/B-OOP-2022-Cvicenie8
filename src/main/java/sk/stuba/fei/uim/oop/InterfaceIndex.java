@@ -2,10 +2,10 @@ package sk.stuba.fei.uim.oop;
 
 import java.util.List;
 
-public class InterfaceIndex extends GenericIndex<Character, CharacterKey>{
+public class InterfaceIndex<VALUE_TYPE extends  CharacterKey> extends GenericIndex<Character, VALUE_TYPE>{
 
 
-    public List<CharacterKey> add(CharacterKey value) {
+    public List<VALUE_TYPE> add(VALUE_TYPE value) {
       return  this.put(value.getke(),value);
     }
 

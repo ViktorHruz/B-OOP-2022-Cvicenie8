@@ -9,15 +9,15 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        InterfaceIndex ci = new InterfaceIndex();
-        ci.add(new Message("hello"));
-        ci.add(new Message("world"));
+        InterfaceIndex<Adress> ci = new InterfaceIndex<>();
         ci.add(new Adress("hodzovo nam.", "80204"));
-        var old = ci.add(new Message("hello world"));
+        ci.add(new Adress("Hlavna ulica", "123456"));
 
+        var old = ci.add(new Adress("hlinene nam.", "543210"));
 
-
-        System.out.println(old);
+        for(Adress a : old){
+            System.out.println(a.getPsc() + " " + a.getAdress());
+        }
 
     }
 
