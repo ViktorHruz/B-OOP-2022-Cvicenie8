@@ -1,19 +1,30 @@
 package sk.stuba.fei.uim.oop;
 
 
+import java.io.*;
+
 public class Main {
     public static void main(String[] args) {
 
-        vonkajsiFor:
-        for (int i = 1; i < 5; i++) {
-            for (int j = 10; j > 0; j--) {
-                System.out.println("----");
-                if(i%3 == 0){
-                    break vonkajsiFor;
-                }
-                System.out.println(i + " " + j);
-            }
+       //File file = new File("src/main/resources/textFile.txt");
+        File file = new File("src" +File.separator +"main"+File.separator +"resources"+File.separator +"textFile.txt");
+        FileReader fileReader;
+        try {
+            fileReader = new FileReader(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return;
         }
-        System.out.println("Koniec");
+
+        BufferedReader reader = new BufferedReader(fileReader);
+
+        try {
+            for(String line = reader.readLine(); line!= null; line = reader.readLine()){
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
