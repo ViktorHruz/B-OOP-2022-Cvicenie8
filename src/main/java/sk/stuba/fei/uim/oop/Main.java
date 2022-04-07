@@ -9,14 +9,13 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
+        ConcreteIndex ci = new ConcreteIndex();
+        ci.add(new Message("hello"));
+        ci.add(new Message("world"));
+        ci.add(new Message("hello world"));
 
-        GenericIndex<Character, Message> concreteIndex = new GenericIndex<>();
-        var old = concreteIndex.put('w', new Message("world"));
-        System.out.println(old);
-        old = concreteIndex.put('h', new Message("Hello world"));
-        System.out.println(old);
-        old = concreteIndex.put('h', new Message("hello"));
-        System.out.println(old);
+        System.out.println(ci.toString());
+
     }
 
 
