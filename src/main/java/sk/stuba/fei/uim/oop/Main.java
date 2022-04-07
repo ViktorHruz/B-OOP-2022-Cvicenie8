@@ -7,16 +7,18 @@ public class Main {
     public static void main(String[] args) {
 
        //File file = new File("src/main/resources/textFile.txt");
-        File file = new File("src" +File.separator +"main"+File.separator +"resources"+File.separator +"textFile.txt");
-        FileReader fileReader;
-        try {
-            fileReader = new FileReader(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
+        InputStream is = Main.class.getClassLoader().getResourceAsStream("textFile.txt");
+
+        if (is == null){
+            System.out.println("Tento File nie je v Resourcoch");
             return;
         }
 
-        BufferedReader reader = new BufferedReader(fileReader);
+        InputStreamReader isr = new InputStreamReader(is);
+
+
+        BufferedReader reader = new BufferedReader(isr);
 
         try {
             for(String line = reader.readLine(); line!= null; line = reader.readLine()){
